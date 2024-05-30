@@ -1,0 +1,66 @@
+{
+  "language": "Français",
+  "@language": {
+    "description": "La langue actuelle"
+  },
+  "appname": "Advans Tunisie",
+  "@appname": {
+    "description": "Nom de l'application"
+  },
+  "appslogan": "Grandir ensemble",
+  "@appslogan": {
+    "description": "Grandir ensemble"
+  },
+  "textSigninButton": "Se connecter",
+  "@textSigninButton": {
+    "description": "Se connecter"
+  },
+  "textSignupButton": "S'inscrire en tant que client existant",
+  "@textSignupButton": {
+    "description": "S'inscrire"
+  },
+  "textLoginButton": "Connexion",
+  "@textLoginButton": {
+    "description": "Connexion"
+  },
+  "placeholderUsername": "Nom d'utilisateur",
+  "@placeholderUsername": {
+    "description": "Texte de l'indicateur pour le champ de saisie du nom d'utilisateur"
+  },
+  "placeholderPassword": "Mot de passe",
+  "@placeholderPassword": {
+    "description": "Texte de l'indicateur pour le champ de saisie du mot de passe"
+  },
+  "categoriesMobileMoney": "Argent Mobile",
+  "@categoriesMobileMoney": {
+    "description": "Catégorie: Argent Mobile"
+  },
+  "categoriesGetALoan": "Obtenir un prêt",
+  "@categoriesGetALoan": {
+    "description": "Catégorie: Obtenir un prêt"
+  },
+  "categoriesTransfers": "Transferts",
+  "@categoriesTransfers": {
+    "description": "Catégorie: Transferts"
+  },
+  "categoriesSaveInvest": "Épargner et Investir",
+  "@categoriesSaveInvest": {
+    "description": "Catégorie: Épargner et Investir"
+  },
+  "quickActionsText": "Actions Rapides",
+  "@quickActionsText": {
+    "description": "Texte pour la section des actions rapides"
+  },
+  "yourCardsText": "Vos Cartes",
+  "@yourCardsText": {
+    "description": "Texte pour la section de vos cartes"
+  },
+    "greetingUser": "Bonjour {username}",
+  "@greetingUser": {
+    "description": "Message de salutation avec espace réservé pour le nom d'utilisateur"
+  },
+    "payBills": "Payer les factures",
+  "@payBills": {
+    "description": "Payer les factures"
+  }
+}

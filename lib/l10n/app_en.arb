@@ -1,0 +1,66 @@
+{
+  "language": "English",
+  "@language": {
+    "description": "The current language"
+  },
+  "appname": "Advans Tunisie",
+  "@appname": {
+    "description": "App name"
+  },
+  "appslogan": "Growing together",
+  "@appslogan": {
+    "description": "Growing together"
+  },
+  "textSigninButton": "Sign in",
+  "@textSigninButton": {
+    "description": "Sign in"
+  },
+  "textSignupButton": "Sign up as an existing client",
+  "@textSignupButton": {
+    "description": "Sign up"
+  },
+  "textLoginButton": "Login",
+  "@textLoginButton": {
+    "description": "Login"
+  },
+  "placeholderUsername": "Username",
+  "@placeholderUsername": {
+    "description": "Placeholder text for the username input field"
+  },
+  "placeholderPassword": "Password",
+  "@placeholderPassword": {
+    "description": "Placeholder text for the password input field"
+  },
+  "categoriesMobileMoney": "Mobile Money",
+  "@categoriesMobileMoney": {
+    "description": "Category: Mobile Money"
+  },
+  "categoriesGetALoan": "Get a loan",
+  "@categoriesGetALoan": {
+    "description": "Category: Get a loan"
+  },
+  "categoriesTransfers": "Transfers",
+  "@categoriesTransfers": {
+    "description": "Category: Transfers"
+  },
+  "categoriesSaveInvest": "Save & Invest",
+  "@categoriesSaveInvest": {
+    "description": "Category: Save & Invest"
+  },
+  "quickActionsText": "Quick Actions",
+  "@quickActionsText": {
+    "description": "Text for quick actions section"
+  },
+  "yourCardsText": "Your Cards",
+  "@yourCardsText": {
+    "description": "Text for your cards section"
+  },
+  "greetingUser": "Hi {username}",
+  "@greetingUser": {
+    "description": "Greeting message with username placeholder"
+  },
+    "payBills": "Pay Bills",
+  "@payBills": {
+    "description": "Pay Bills"
+  }
+}

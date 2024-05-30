@@ -1,0 +1,66 @@
+{
+  "language": "العربية",
+  "@language": {
+    "description": "اللغة الحالية"
+  },
+  "appname": "أدفانس تونس",
+  "@appname": {
+    "description": "اسم التطبيق"
+  },
+  "appslogan": "ننمو معاً",
+  "@appslogan": {
+    "description": "ننمو معاً"
+  },
+  "textSigninButton": "تسجيل الدخول",
+  "@textSigninButton": {
+    "description": "تسجيل الدخول"
+  },
+  "textSignupButton": "اشترك كعميل حالي",
+  "@textSignupButton": {
+    "description": "اشترك"
+  },
+  "textLoginButton": "تسجيل الدخول",
+  "@textLoginButton": {
+    "description": "تسجيل الدخول"
+  },
+  "placeholderUsername": "اسم المستخدم",
+  "@placeholderUsername": {
+    "description": "النص التوضيحي لحقل إدخال اسم المستخدم"
+  },
+  "placeholderPassword": "كلمة المرور",
+  "@placeholderPassword": {
+    "description": "النص التوضيحي لحقل إدخال كلمة المرور"
+  },
+  "categoriesMobileMoney": "الأموال المحمولة",
+  "@categoriesMobileMoney": {
+    "description": "الفئة: الأموال المحمولة"
+  },
+  "categoriesGetALoan": "احصل على قرض",
+  "@categoriesGetALoan": {
+    "description": "الفئة: احصل على قرض"
+  },
+  "categoriesTransfers": "التحويلات",
+  "@categoriesTransfers": {
+    "description": "الفئة: التحويلات"
+  },
+  "categoriesSaveInvest": "التوفير والاستثمار",
+  "@categoriesSaveInvest": {
+    "description": "الفئة: التوفير والاستثمار"
+  },
+  "quickActionsText": "إجراءات سريعة",
+  "@quickActionsText": {
+    "description": "النص لقسم الإجراءات السريعة"
+  },
+  "yourCardsText": "بطاقاتك",
+  "@yourCardsText": {
+    "description": "النص لقسم بطاقاتك"
+  }
+  ,
+  "greetingUser": "مرحبا {username}",
+  "@greetingUser": {
+    "description": "رسالة ترحيب مع اسم المستخدم"
+  }, "payBills": "دفع الفواتير",
+  "@payBills": {
+    "description": "دفع الفواتير"
+  }
+}
