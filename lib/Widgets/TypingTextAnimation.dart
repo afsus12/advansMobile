@@ -1,9 +1,11 @@
 import 'dart:async';
 
-import 'package:advans_app/Screens/LoginScreen.dart';
+import 'package:advans_app/Screens/Client/authentification/LoginScreen.dart';
 import 'package:advans_app/Screens/LandingScreen.dart';
+import 'package:advans_app/routes/routes_guide.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:get/get.dart';
 
 class TypingTextAnimation extends StatefulWidget {
   const TypingTextAnimation({super.key});
@@ -38,8 +40,7 @@ class _TypingTextAnimationState extends State<TypingTextAnimation> {
               onNext: (index, isLast) {
                 if (isLast) {
                   Future.delayed(Duration(milliseconds: 100), () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => LandingScreen()));
+                    Get.offNamed(routesGuide.onLanding);
                   });
                 }
               },

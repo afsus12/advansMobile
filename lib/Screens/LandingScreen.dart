@@ -1,28 +1,29 @@
-import 'package:advans_app/Screens/LoginScreen.dart';
-import 'package:advans_app/Screens/SignupScreen.dart';
-import 'package:advans_app/Utils/myColors.dart';
+import 'package:advans_app/Data/Controllers/Language_Controller.dart';
+import 'package:advans_app/Screens/Client/authentification/ClientAuth.dart';
+import 'package:advans_app/Screens/Client/authentification/LoginScreen.dart';
+import 'package:advans_app/Screens/Client/authentification/SignupScreen.dart';
+import 'package:advans_app/Screens/Staff/authentification/StaffAuth.dart';
+import 'package:advans_app/Screens/Staff/authentification/StaffLogin.dart';
+import 'package:advans_app/Utils/ColorsAndThemes/myColors.dart';
 import 'package:advans_app/Widgets/big_text.dart';
 import 'package:advans_app/Widgets/buttonwithicon.dart';
-import 'package:advans_app/bloc/landing/landing_bloc.dart';
-import 'package:advans_app/bloc/landing/landing_event.dart';
-import 'package:advans_app/bloc/landing/landing_state.dart';
+
 import 'package:advans_app/commons/customShapes/Tcontainer.dart';
+import 'package:advans_app/routes/routes_guide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 
-class LandingScreen extends StatefulWidget {
+class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 
   @override
-  State<LandingScreen> createState() => _LandingScreenState();
-}
-
-class _LandingScreenState extends State<LandingScreen> {
-  @override
   Widget build(BuildContext context) {
+    final LocaleController appController = Get.find<LocaleController>();
+
     return Material(
         child: Container(
             width: MediaQuery.of(context).size.width,
@@ -117,19 +118,33 @@ class _LandingScreenState extends State<LandingScreen> {
                           borderRadius: BorderRadius.circular(10),
                           child: InkWell(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                              Get.toNamed(routesGuide.authScreenStaff);
                             },
                             child: Container(
+                              width: MediaQuery.of(context).size.width * 0.62.w,
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 80, vertical: 10),
-                              child: Text(
-                                AppLocalizations.of(context)!.textSigninButton,
-                                style: TextStyle(
+                                  horizontal: 60, vertical: 10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(
+                                    Icons.work,
+                                    size: 25.sp,
                                     color: Colors.white,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1),
+                                  ),
+                                  SizedBox(
+                                    width: 30.w,
+                                  ),
+                                  Text(
+                                    AppLocalizations.of(context)!.staffMember,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -137,82 +152,86 @@ class _LandingScreenState extends State<LandingScreen> {
                         SizedBox(
                           height: 15.h,
                         ),
-                        Material(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignupScreen()));
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 10.h, vertical: 10),
-                              child: Text(
-                                AppLocalizations.of(context)!.textSignupButton,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(routesGuide.authScreenClient);
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.62.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: MyColors.MainGreenColor, // Border color
+                                width: 1, // Border width
                               ),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 60, vertical: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.person,
+                                  size: 25.sp,
+                                ),
+                                SizedBox(
+                                  width: 30.w,
+                                ),
+                                Text(
+                                  textAlign: TextAlign.center,
+                                  AppLocalizations.of(context)!.clientMember,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                         SizedBox(
                           height: 10.h,
                         ),
-                        BlocConsumer<LanguageBloc, LanguageState>(
-                            listener: (context, state) {
-                          // This listener is called whenever the bloc state changes
-                        }, builder: (context, State) {
-                          return Container(
-                              height: 80.h,
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    BlocBuilder<LanguageBloc, LanguageState>(
-                                        builder: (context, state) {
-                                      return CircleAvatar(
-                                          foregroundImage: AssetImage(
-                                            state.imagePath,
-                                          ),
-                                          radius: 20.sp,
-                                          backgroundColor: Colors.transparent,
-                                          backgroundImage:
-                                              AssetImage(state.imagePath));
-                                    }),
-                                    Expanded(
-                                      child: IconButton(
-                                        icon: Icon(Icons.change_circle_rounded,
-                                            color: MyColors.SecondGreenColor,
-                                            size: 30),
-                                        onPressed: () {
-                                          final bloc =
-                                              context.read<LanguageBloc>();
-                                          final currentState =
-                                              bloc.state.languageCode;
-                                          if (currentState == 'en') {
-                                            BlocProvider.of<LanguageBloc>(
-                                                    context)
-                                                .add(ChangeLanguage("fr"));
-                                            Locale('fr');
-                                          } else if (currentState == 'fr') {
-                                            BlocProvider.of<LanguageBloc>(
-                                                    context)
-                                                .add(ChangeLanguage("ar"));
-                                            Locale('ar');
-                                          } else {
-                                            BlocProvider.of<LanguageBloc>(
-                                                    context)
-                                                .add(ChangeLanguage("en"));
-                                            Locale('en');
-                                          }
-                                        },
+                        Container(
+                            height: 80.h,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Obx(() {
+                                    String imagePath;
+                                    if (appController.currentLanguage.value ==
+                                        'en') {
+                                      imagePath =
+                                          'assets/images/united-kingdom.png'; // Replace with your image path
+                                    } else if (appController
+                                            .currentLanguage.value ==
+                                        'fr') {
+                                      imagePath =
+                                          'assets/images/france.png'; // Replace with your image path
+                                    } else {
+                                      imagePath =
+                                          'assets/images/tunisia.png'; // Replace with your image path
+                                    }
+                                    return CircleAvatar(
+                                      foregroundImage: AssetImage(imagePath),
+                                      radius: 20.sp,
+                                      backgroundColor: Colors.transparent,
+                                    );
+                                  }),
+                                  Expanded(
+                                    child: IconButton(
+                                      icon: Icon(
+                                        Icons.change_circle_rounded,
+                                        color: MyColors.SecondGreenColor,
+                                        size: 30,
                                       ),
+                                      onPressed: () {
+                                        appController.switchLanguage();
+                                      },
                                     ),
-                                  ]));
-                        })
+                                  ),
+                                ]))
                       ],
                     ),
                   ),

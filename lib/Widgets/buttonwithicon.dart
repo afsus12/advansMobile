@@ -1,4 +1,4 @@
-import '../utils/myColors.dart';
+import 'package:advans_app/Utils/ColorsAndThemes/myColors.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWithIcon extends StatelessWidget {

@@ -1,14 +1,16 @@
-import 'package:advans_app/Utils/myColors.dart';
+import 'package:advans_app/Utils/ColorsAndThemes/myColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardTemplate extends StatelessWidget {
-  const CardTemplate({super.key});
+  final String name;
+  const CardTemplate({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20, top: 3, right: 5, bottom: 5),
-      height: 250,
+      padding: EdgeInsets.only(left: 20.w, top: 3.h, right: 5.w, bottom: 5.h),
+      height: 200.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: MyColors.MainGreenColor.withOpacity(.822)),
@@ -43,7 +45,7 @@ class CardTemplate extends StatelessWidget {
                 width: 80,
               ),
               Text(
-                "Foulen ben Foulen",
+                name,
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
